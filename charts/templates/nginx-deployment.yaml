@@ -15,7 +15,7 @@ spec:
       volumes:
         - name: html-volume
           emptyDir: {}
-      initContainers:
+      containers:
         - name: sidecar
           image: python:alpine
           volumeMounts:
@@ -25,7 +25,7 @@ spec:
           args:
             - |
               echo "hello, world $(date)" > /usr/share/nginx/html/index.html;
-      containers:
+              sleep infinity;
         - name: app
           image: nginx:alpine
           ports:
