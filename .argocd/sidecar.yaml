@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: git@github.com:jpa-penneo/test-sidecar.git
+    repoURL: https://github.com/jpa-penneo/test-sidecar
     targetRevision: main
     path: charts/
     helm:
