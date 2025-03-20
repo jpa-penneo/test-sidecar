@@ -10,5 +10,5 @@ spec:
       containers:
         - name: call-api
           image: curlimages/curl:latest
-          command: ["curl", "-X", "POST", "http://test-api.devel:3000"]
+          command: ["curl", "-X", "GET", "http://test-api.devel:3000"]
       restartPolicy: Never
