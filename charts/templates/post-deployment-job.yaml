@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: call-api-job
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+spec:
+  template:
+    spec:
+      containers:
+        - name: call-api
+          image: curlimages/curl:latest
+          command: ["curl", "-X", "POST", "http://test-api.devel:3000"]
+      restartPolicy: Never
